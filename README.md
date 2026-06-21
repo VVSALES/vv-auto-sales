@@ -65,10 +65,6 @@ npx http-server
 
 ## Admin Access
 
-### Default Credentials
-- **Email**: `vishnuverma@zohomail.in`
-- **Password**: `foxin@1213`
-
 ### Admin Features
 Once logged in, admins can:
 - Add new vehicles to inventory
