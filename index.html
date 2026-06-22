@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VV AUTO SALES - Premium Certified Pre-Owned</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f1115;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #aa8416;
+        }
+    </style>
+</head>
+<body class="bg-[#0f1115] font-sans text-gray-200">
+
+    <div class="bg-[#090a0d] border-b border-[#d4af37]/20 text-xs text-gray-400 py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-phone text-[#d4af37] mr-1.5"></i> +91 8158931668</span>
+                <span><i class="fa-solid fa-envelope text-[#d4af37] mr-1.5"></i> vishnuverma@zohomail.in</span>
+            </div>
+            <div class="hidden sm:flex items-center space-x-2">
+                <span class="bg-[#d4af37]/10 text-[#d4af37] border border-[#d4af37]/30 px-2 py-0.5 rounded-sm text-[10px] uppercase font-bold tracking-wider">Certified 2, 3, 4 & 6 Wheelers</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-[#161920]/95 backdrop-blur sticky top-0 z-40 border-b border-[#d4af37]/20 shadow-xl">
+        <div class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="border-2 border-[#d4af37] p-1.5 rounded bg-black">
+                    <span class="text-xl font-black text-[#d4af37] tracking-tighter">VV</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-widest text-[#d4af37] uppercase">VV AUTO SALES</h1>
+                    <p class="text-[11px] uppercase tracking-widest italic text-gray-400">You wish we arrange</p>
+                </div>
+            </div>
+            <nav class="flex items-center space-x-6 mt-4 md:mt-0 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-gray-800 pt-3 md:pt-0">
+                <div class="flex space-x-4 text-sm font-semibold tracking-wide">
+                    <a href="#catalog" class="text-gray-300 hover:text-[#d4af37] transition">Stock Inventory</a>
+                    <a href="#calculator-section" class="text-gray-300 hover:text-[#d4af37] transition">EMI Calculator</a>
+                    <a href="#services" class="text-gray-300 hover:text-[#d4af37] transition">Alliances</a>
+                    <a href="#contact" class="text-gray-300 hover:text-[#d4af37] transition">Inquiry</a>
+                </div>
+                <div>
+                    <button id="adminNavBtn" onclick="toggleAdminModal(true)" class="border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black font-bold px-4 py-1.5 rounded text-xs tracking-wider uppercase transition duration-300">
+                        <i class="fa-solid fa-lock mr-1.5"></i> Admin
+                    </button>
+                    <button id="logoutBtn" onclick="handleLogout()" class="hidden bg-red-700/80 hover:bg-red-700 text-white font-bold px-4 py-1.5 rounded text-xs tracking-wider uppercase transition">
+                        <i class="fa-solid fa-power-off mr-1.5"></i> Logout
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="relative border-b border-[#d4af37]/20 bg-black overflow-hidden py-16 md:py-28 px-4">
+        <div class="absolute inset-0 z-0">
+            <img id="showroomBannerImage" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80" alt="VV Auto Sales Showroom Layout" class="w-full h-full object-cover opacity-60 filter brightness-95">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1115] via-transparent to-[#0f1115]/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0f1115]/30 via-transparent to-[#0f1115]/30"></div>
+        </div>
+        
+        <div class="container mx-auto relative z-10 text-center">
+            <div class="max-w-3xl mx-auto bg-black/75 p-6 sm:p-8 md:p-10 rounded-xl border border-[#d4af37]/30 backdrop-blur-md shadow-2xl">
+                <span class="text-[#d4af37] text-xs font-bold tracking-widest uppercase bg-[#d4af37]/10 px-3 py-1 rounded-full border border-[#d4af37]/20">Official Virtual Showroom Floor</span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-white mt-4 mb-4 tracking-tight uppercase leading-tight">YOUR TRUSTED DESTINATION FOR QUALITY USED CARS</h2>
+                <p class="text-xs md:text-sm text-gray-300 uppercase tracking-wider italic text-amber-400 font-bold">"You Wish We Arrange"</p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="#catalog" class="bg-[#d4af37] hover:bg-[#bda030] text-black font-extrabold px-6 py-2.5 rounded shadow-lg tracking-wider uppercase text-xs transition">
+                        Browse Available Vehicles
+                    </a>
+                    <a href="#calculator-section" class="bg-slate-900 hover:bg-slate-800 text-white border border-gray-700 font-bold px-6 py-2.5 rounded shadow-lg tracking-wider uppercase text-xs transition">
+                        Compare Financial Options
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="bg-[#0f1115] py-20 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-between items-end mb-10 pb-6 border-b border-gray-800">
+                <div>
+                    <span class="text-[#d4af37] text-xs font-bold tracking-widest uppercase">Live Showroom Floor</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mt-1">Showcased Vehicle Stock</h2>
+                </div>
+                <div id="adminActionPanel" class="hidden mt-4 sm:mt-0">
+                    <button onclick="openVehicleModal()" class="bg-[#d4af37] hover:bg-[#bda030] text-black font-extrabold px-5 py-2.5 rounded text-xs uppercase tracking-wider shadow-lg transition">
+                        <i class="fa-solid fa-plus mr-1.5"></i> Introduce New Stock Variant
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button onclick="filterCatalog('All')" class="filter-btn bg-[#d4af37] text-black font-bold px-5 py-2 rounded text-xs uppercase tracking-wider transition shadow-md">All Architecture</button>
+                <button onclick="filterCatalog('2 Wheeler')" class="filter-btn bg-[#161920] hover:bg-gray-800 text-gray-300 font-bold px-5 py-2 rounded text-xs uppercase tracking-wider transition border border-gray-800">2 Wheelers</button>
+                <button onclick="filterCatalog('3 Wheeler')" class="filter-btn bg-[#161920] hover:bg-gray-800 text-gray-300 font-bold px-5 py-2 rounded text-xs uppercase tracking-wider transition border border-gray-800">3 Wheelers</button>
+                <button onclick="filterCatalog('4 Wheeler')" class="filter-btn bg-[#161920] hover:bg-gray-800 text-gray-300 font-bold px-5 py-2 rounded text-xs uppercase tracking-wider transition border border-gray-800">4 Wheelers</button>
+                <button onclick="filterCatalog('6 Wheeler')" class="filter-btn bg-[#161920] hover:bg-gray-800 text-gray-300 font-bold px-5 py-2 rounded text-xs uppercase tracking-wider transition border border-gray-800">6 Wheelers</button>
+            </div>
+
+            <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                </div>
+        </div>
+    </section>
+
+    <section id="services" class="container mx-auto px-4 py-8 border-t border-gray-800/80">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-[#161920] rounded-lg border border-gray-800">
+                <div class="text-[#d4af37] text-3xl mb-3"><i class="fa-solid fa-truck-pickup"></i></div>
+                <h4 class="text-base font-bold text-white mb-2 uppercase tracking-wide">All Wheel Configurations</h4>
+                <p class="text-gray-400 text-xs leading-relaxed">Direct loops for verified multi-wheeler inventories: bikes, auto-rickshaws, commercial trucks, and personal cars.</p>
+            </div>
+            <div class="p-6 bg-[#161920] rounded-lg border border-gray-800">
+                <div class="text-[#d4af37] text-3xl mb-3"><i class="fa-solid fa-shield-circle-check"></i></div>
+                <h4 class="text-base font-bold text-white mb-2 uppercase tracking-wide">Certified Quality Parameter</h4>
+                <p class="text-gray-400 text-xs leading-relaxed">Mechanical evaluation and strict document checks are processed for 100% security.</p>
+            </div>
+            <div class="p-6 bg-[#161920] rounded-lg border border-gray-800">
+                <div class="text-[#d4af37] text-3xl mb-3"><i class="fa-solid fa-percent"></i></div>
+                <h4 class="text-base font-bold text-white mb-2 uppercase tracking-wide">Flexible Financial Tie-ups</h4>
+                <p class="text-gray-400 text-xs leading-relaxed">Strategic partnerships with nationalized banking networks and major automotive finance NBFCs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator-section" class="py-16 px-4 bg-[#090a0d] border-t border-b border-[#d4af37]/10">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-10">
+                <span class="text-[#d4af37] text-xs font-bold tracking-widest uppercase">Flexible Finance Infrastructure</span>
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight mt-1">Govt Bank vs NBFC Loan EMI Comparator</h2>
+                <p class="text-gray-400 text-sm mt-2 max-w-2xl mx-auto">Input values and customize standard annual Interest Rates (IRR) below to map pricing structures side-by-side.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <div class="lg:col-span-5 bg-[#161920] p-6 rounded-xl border border-gray-800 flex flex-col justify-between shadow-xl">
+                    <h3 class="text-sm font-bold text-[#d4af37] uppercase tracking-wider mb-4 border-b border-gray-800 pb-2">Calculator Parameters</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Vehicle Price / Loan Amount (₹)</label>
+                            <input type="number" id="calcAmount" value="500000" step="25000" min="50000" oninput="calculateEmiMatrix()" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-2 text-white focus:outline-none focus:border-[#d4af37] font-mono text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Down Payment Allocation (₹)</label>
+                            <input type="number" id="calcDownPayment" value="100000" step="10000" min="0" oninput="calculateEmiMatrix()" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-2 text-white focus:outline-none focus:border-[#d4af37] font-mono text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Loan Tenure / Duration</label>
+                            <select id="calcTenure" onchange="calculateEmiMatrix()" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-2 text-white focus:outline-none focus:border-[#d4af37] text-sm">
+                                <option value="1">1 Year (12 Months)</option>
+                                <option value="3">3 Years (36 Months)</option>
+                                <option value="5" selected>5 Years (60 Months)</option>
+                                <option value="7">7 Years (84 Months)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3 pt-2 border-t border-gray-800/60">
+                            <div>
+                                <label class="block text-[10px] font-bold text-[#60a5fa] uppercase tracking-wider mb-1">Govt Bank IRR (%)</label>
+                                <input type="number" id="calcBankRoi" value="8.75" step="0.25" min="1" max="30" oninput="calculateEmiMatrix()" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-blue-400 font-mono text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-[#fbbf24] uppercase tracking-wider mb-1">NBFC IRR (%)</label>
+                                <input type="number" id="calcNbfcRoi" value="11.50" step="0.25" min="1" max="30" oninput="calculateEmiMatrix()" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-amber-400 font-mono text-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="calculateEmiMatrix()" class="w-full mt-4 bg-[#d4af37] hover:bg-[#bda030] text-black font-black py-2.5 rounded text-xs uppercase tracking-widest transition shadow-lg">
+                        Recalculate Matrices
+                    </button>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gradient-to-b from-[#161920] to-[#111319] p-6 rounded-xl border border-blue-900/30 shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center border-b border-gray-800 pb-2 mb-4">
+                                <h4 class="text-sm font-bold text-blue-400 uppercase tracking-wider"><i class="fa-solid fa-building-columns mr-1.5"></i> Govt Banks</h4>
+                                <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] px-2 py-0.5 rounded font-mono font-bold" id="bankRoiLabel">8.75% p.a.</span>
+                            </div>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">SBI, PNB, BOB structures. Characterized by strict paperwork validation requirements, zero hidden processing penalties, and lower core interest parameters.</p>
+                        </div>
+                        <div class="bg-black/40 p-4 rounded border border-gray-800/80">
+                            <span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider block mb-1">Estimated Monthly EMI</span>
+                            <span class="text-2xl font-black text-white font-mono" id="bankEmiDisplay">₹0</span>
+                            <div class="text-[10px] text-gray-400 mt-2 pt-2 border-t border-gray-800/50 flex justify-between">
+                                <span>Total Interest:</span>
+                                <span id="bankInterestDisplay" class="font-bold text-gray-300">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-b from-[#161920] to-[#111319] p-6 rounded-xl border border-amber-900/30 shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center border-b border-gray-800 pb-2 mb-4">
+                                <h4 class="text-sm font-bold text-amber-500 uppercase tracking-wider"><i class="fa-solid fa-handshake-angle mr-1.5"></i> NBFC Providers</h4>
+                                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] px-2 py-0.5 rounded font-mono font-bold" id="nbfcRoiLabel">11.50% p.a.</span>
+                            </div>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Mahindra Finance, Chola, HDB, Sundaram. Offers lightning-fast clearance metrics, higher acceptance on low CIBIL tracking, and tailored options.</p>
+                        </div>
+                        <div class="bg-black/40 p-4 rounded border border-gray-800/80">
+                            <span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider block mb-1">Estimated Monthly EMI</span>
+                            <span class="text-2xl font-black text-[#d4af37] font-mono" id="nbfcEmiDisplay">₹0</span>
+                            <div class="text-[10px] text-gray-400 mt-2 pt-2 border-t border-gray-800/50 flex justify-between">
+                                <span>Total Interest:</span>
+                                <span id="nbfcInterestDisplay" class="font-bold text-gray-300">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-5 space-y-6">
+                <div>
+                    <span class="text-[#d4af37] text-xs font-bold tracking-widest uppercase">Immediate Procurement Assistance</span>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight mt-1">Initiate Comprehensive Inquiry</h2>
+                    <p class="text-gray-400 text-sm mt-2 leading-relaxed">Specify details regarding specific models or banking structures. Our team will structure a personalized package immediately.</p>
+                </div>
+                
+                <div class="space-y-3 font-mono">
+                    <div class="flex items-center p-4 bg-[#161920] rounded border border-gray-800">
+                        <div class="text-[#d4af37] text-lg mr-4"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-sans">Voice Communication Hotline</p>
+                            <a href="tel:+918158931668" class="text-lg font-bold text-white hover:text-[#d4af37] transition">+91 8158931668</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-[#161920] rounded border border-gray-800">
+                        <div class="text-green-400 text-lg mr-4"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-sans">Instant WhatsApp Telemetry</p>
+                            <a href="https://wa.me/918158931668" target="_blank" class="text-lg font-bold text-white hover:text-green-400 transition">Chat Real-Time</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-[#161920] p-6 md:p-8 rounded-xl border border-gray-800 shadow-2xl">
+                <h3 class="text-base font-bold text-white uppercase tracking-wide mb-4 pb-2 border-b border-gray-800">Vehicle Request Form</h3>
+                <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Full Name</label>
+                            <input type="text" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-2 text-white focus:outline-none focus:border-[#d4af37] text-sm" placeholder="e.g., Rajesh Kumar">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Mobile Number</label>
+                            <input type="tel" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-2 text-white focus:outline-none focus:border-[#d4af37] text-sm" placeholder="e.g., 8158931668">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Target Vehicle / Requirement Model</label>
+                        <input type="text" id="formVehicleField" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-2 text-white focus:outline-none focus:border-[#d4af37] text-sm" placeholder="e.g., Mahindra Bolero Neo / Certified Hatchback">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Message / Finance Notes</label>
+                        <textarea rows="3" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-2 text-white focus:outline-none focus:border-[#d4af37] text-sm" placeholder="Identify preferred tenure down payments or specific banking frameworks..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#d4af37] hover:bg-[#bda030] text-black font-black py-2.5 rounded text-xs uppercase tracking-widest transition shadow-lg">
+                        Submit Sourcing Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#090a0d] text-gray-500 py-10 border-t border-[#d4af37]/20 text-center text-xs">
+        <div class="max-w-xl mx-auto space-y-3 px-4">
+            <div class="text-lg font-black text-[#d4af37] tracking-widest">VV AUTO SALES</div>
+            <p class="text-gray-400 italic text-xs">"You wish we arrange"</p>
+            <div class="h-px bg-gradient-to-r from-transparent via-[#d4af37]/20 to-transparent my-3"></div>
+            <p>&copy; 2026 VV AUTO SALES. Secure Showroom Cloud Profile. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="fixed inset-0 bg-black/80 flex items-center justify-center hidden z-50 p-4 backdrop-blur-sm">
+        <div class="bg-[#161920] rounded-lg max-w-md w-full p-6 border border-[#d4af37]/30 shadow-2xl relative">
+            <button onclick="toggleAdminModal(false)" class="absolute top-4 right-4 text-gray-400 hover:text-[#d4af37] text-xl transition">&times;</button>
+            <div class="text-center mb-4">
+                <h3 class="text-lg font-bold text-white uppercase tracking-wide">Console Authentication</h3>
+                <p class="text-xs text-gray-400">Authorized Management Access Only</p>
+            </div>
+            <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Email ID</label>
+                    <input type="email" id="loginEmail" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-[#d4af37] text-sm">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Password</label>
+                    <input type="password" id="loginPassword" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-[#d4af37] text-sm">
+                </div>
+                <div id="loginError" class="text-red-500 text-xs font-bold bg-red-500/10 border border-red-500/20 p-2 rounded hidden">
+                    Invalid Credentials. Session Rejected.
+                </div>
+                <button type="submit" class="w-full bg-[#d4af37] hover:bg-[#bda030] text-black font-black py-2 rounded text-xs uppercase tracking-wider transition">
+                    Execute Secure Login
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="vehicleModal" class="fixed inset-0 bg-black/80 flex items-center justify-center hidden z-50 p-4 backdrop-blur-sm overflow-y-auto">
+        <div class="bg-[#161920] rounded-lg max-w-md w-full p-6 border border-[#d4af37]/30 shadow-2xl relative my-auto">
+            <button onclick="closeVehicleModal()" class="absolute top-4 right-4 text-gray-400 hover:text-[#d4af37] text-xl transition">&times;</button>
+            <h3 id="modalTitle" class="text-lg font-bold text-white uppercase tracking-wide mb-4 pb-2 border-b border-gray-800">Introduce Stock Entry</h3>
+            
+            <form onsubmit="saveVehicleForm(event)" class="space-y-3">
+                <input type="hidden" id="vehicleId">
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Vehicle Variant Title</label>
+                    <input type="text" id="vTitle" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-[#d4af37] text-sm" placeholder="e.g., Hyundai Creta SX">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Wheel Classification</label>
+                    <select id="vCategory" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-[#d4af37] text-sm">
+                        <option value="2 Wheeler">2 Wheeler</option>
+                        <option value="3 Wheeler">3 Wheeler</option>
+                        <option value="4 Wheeler">4 Wheeler</option>
+                        <option value="6 Wheeler">6 Wheeler</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Price (₹)</label>
+                        <input type="number" id="vPrice" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-[#d4af37] text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Model Year</label>
+                        <input type="text" id="vYear" required class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-[#d4af37] text-sm" placeholder="2021">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Hardware Gallery Image Upload</label>
+                    <div class="space-y-2">
+                        <label class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-gray-800 rounded-lg cursor-pointer bg-[#090a0d] hover:bg-[#12141c] transition">
+                            <div class="flex flex-col items-center justify-center text-center px-2">
+                                <i class="fa-solid fa-cloud-arrow-up text-lg text-[#d4af37] mb-1"></i>
+                                <p class="text-[11px] text-gray-300">Select Local Showroom Image File</p>
+                            </div>
+                            <input type="file" id="vNativeFile" accept="image/*" onchange="processNativeMediaUpload(this)" class="hidden" />
+                        </label>
+                        
+                        <div id="mediaPreviewWrapper" class="hidden border border-[#d4af37]/20 p-2 rounded bg-black flex items-center space-x-3">
+                            <img id="mediaPreviewTarget" src="" class="h-10 w-10 object-cover rounded border border-gray-800">
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[10px] font-bold text-green-400 uppercase">Image Buffered</p>
+                            </div>
+                            <button type="button" onclick="purgeLoadedMediaState()" class="text-red-400 text-xs px-2"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                        <input type="hidden" id="vImageFallbackString">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Mechanical Notes</label>
+                    <input type="text" id="vDesc" class="w-full bg-[#090a0d] border border-gray-800 rounded px-3 py-1.5 text-white focus:outline-none focus:border-[#d4af37] text-sm" placeholder="Certified check complete, single owner profile">
+                </div>
+                <button type="submit" class="w-full bg-[#d4af37] hover:bg-[#bda030] text-black font-black py-2 rounded text-xs uppercase tracking-widest transition shadow-lg">
+                    Commit Master Data Update
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // High fidelity defaults mapping to common configurations
+        const defaultVehicles = [
+            { id: 201, title: "Mahindra Scorpio-N Z8L", category: "4 Wheeler", price: "1875000", year: "2023", desc: "Top tier automatic transmission variant, certified showroom floor profile track status.", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" },
+            { id: 202, title: "Maruti Suzuki Ertiga ZXI", category: "4 Wheeler", price: "895000", year: "2022", desc: "Premium MUV tracking profile, first-owner vehicle with full dealer service ledger tracking.", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" },
+            { id: 203, title: "Piaggio Ape DX Passenger", category: "3 Wheeler", price: "210000", year: "2022", desc: "High fuel-efficiency commercial LPG power plant metrics set ready.", img: "https://images.unsplash.com/photo-1561131915-cdc7cf8e11a1?auto=format&fit=crop&w=600&q=80" },
+            { id: 204, title: "Force Traveller 3050 Commercial", category: "4 Wheeler", price: "1180000", year: "2021", desc: "Ideal configuration tracker for high luxury touring operations, pristine engine compliance.", img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" }
+        ];
+
+        let vehicles = JSON.parse(localStorage.getItem('vv_showroom_v3_store')) || defaultVehicles;
+        let isAdminLoggedIn = sessionStorage.getItem('vv_admin_session_v3') === 'true';
+        let currentFilter = 'All';
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if(!localStorage.getItem('vv_showroom_v3_store')) {
+                localStorage.setItem('vv_showroom_v3_store', JSON.stringify(defaultVehicles));
+            }
+            updateAdminUIState();
+            renderCatalog();
+            calculateEmiMatrix(); // Compute initial matrix load values
+        });
+
+        // MODIFIED CALCULATION CORE TO ACCESS LIVE USER-INPUT IRR FIELDS
+        function calculateEmiMatrix() {
+            const totalCost = parseFloat(document.getElementById('calcAmount').value) || 0;
+            const downPayment = parseFloat(document.getElementById('calcDownPayment').value) || 0;
+            const tenureYears = parseInt(document.getElementById('calcTenure').value) || 5;
+
+            // Extract dynamic IRR values directly from page forms
+            const currentBankRoi = parseFloat(document.getElementById('calcBankRoi').value) || 8.75;
+            const currentNbfcRoi = parseFloat(document.getElementById('calcNbfcRoi').value) || 11.50;
+
+            // Reflect the active rates back onto display badges
+            document.getElementById('bankRoiLabel').innerText = currentBankRoi.toFixed(2) + "% p.a.";
+            document.getElementById('nbfcRoiLabel').innerText = currentNbfcRoi.toFixed(2) + "% p.a.";
+
+            const principal = totalCost - downPayment;
+
+            if(principal <= 0) {
+                document.getElementById('bankEmiDisplay').innerText = "₹0";
+                document.getElementById('nbfcEmiDisplay').innerText = "₹0";
+                document.getElementById('bankInterestDisplay').innerText = "₹0";
+                document.getElementById('nbfcInterestDisplay').innerText = "₹0";
+                return;
+            }
+
+            // Computations Engine Block
+            function runEmiFormula(p, yearlyRoi, years) {
+                let monthlyRoi = (yearlyRoi / 12) / 100;
+                let totalMonths = years * 12;
+                let emi = (p * monthlyRoi * Math.pow(1 + monthlyRoi, totalMonths)) / (Math.pow(1 + monthlyRoi, totalMonths) - 1);
+                let totalRepayment = emi * totalMonths;
+                let totalInterest = totalRepayment - p;
+                return { emi: Math.round(emi), interest: Math.round(totalInterest) };
+            }
+
+            const bankMetrics = runEmiFormula(principal, currentBankRoi, tenureYears);
+            const nbfcMetrics = runEmiFormula(principal, currentNbfcRoi, tenureYears);
+
+            // Interface Updates Elements
+            document.getElementById('bankEmiDisplay').innerText = "₹" + bankMetrics.emi.toLocaleString('en-IN');
+            document.getElementById('bankInterestDisplay').innerText = "₹" + bankMetrics.interest.toLocaleString('en-IN');
+
+            document.getElementById('nbfcEmiDisplay').innerText = "₹" + nbfcMetrics.emi.toLocaleString('en-IN');
+            document.getElementById('nbfcInterestDisplay').innerText = "₹" + nbfcMetrics.interest.toLocaleString('en-IN');
+        }
+
+        function updateAdminUIState() {
+            const adminNavBtn = document.getElementById('adminNavBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const adminActionPanel = document.getElementById('adminActionPanel');
+
+            if (isAdminLoggedIn) {
+                adminNavBtn.classList.add('hidden');
+                logoutBtn.classList.remove('hidden');
+                adminActionPanel.classList.remove('hidden');
+            } else {
+                adminNavBtn.classList.remove('hidden');
+                logoutBtn.classList.add('hidden');
+                adminActionPanel.classList.add('hidden');
+            }
+        }
+
+        function toggleAdminModal(show) {
+            document.getElementById('loginModal').classList.toggle('hidden', !show);
+            document.getElementById('loginError').classList.add('hidden');
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            if (document.getElementById('loginEmail').value === "vishnuverma@zohomail.in" && document.getElementById('loginPassword').value === "foxin@1213") {
+                isAdminLoggedIn = true;
+                sessionStorage.setItem('vv_admin_session_v3', 'true');
+                toggleAdminModal(false);
+                updateAdminUIState();
+                renderCatalog();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function handleLogout() {
+            isAdminLoggedIn = false;
+            sessionStorage.removeItem('vv_admin_session_v3');
+            updateAdminUIState();
+            renderCatalog();
+        }
+
+        function processNativeMediaUpload(inputElement) {
+            const file = inputElement.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('vImageFallbackString').value = e.target.result;
+                document.getElementById('mediaPreviewTarget').src = e.target.result;
+                document.getElementById('mediaPreviewWrapper').classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function purgeLoadedMediaState() {
+            document.getElementById('vNativeFile').value = '';
+            document.getElementById('vImageFallbackString').value = '';
+            document.getElementById('mediaPreviewWrapper').classList.add('hidden');
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('catalogGrid');
+            grid.innerHTML = '';
+            const dataSet = currentFilter === 'All' ? vehicles : vehicles.filter(v => v.category === currentFilter);
+
+            if(dataSet.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500 bg-[#161920] rounded border border-gray-800">No vehicle profiles registered under "${currentFilter}" selector setup.</div>`;
+                return;
+            }
+
+            dataSet.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-[#161920] rounded-lg overflow-hidden border border-gray-800 hover:border-[#d4af37]/40 transition duration-300 flex flex-col justify-between group shadow-xl";
+                card.innerHTML = `
+                    <div>
+                        <div class="relative bg-black h-44 w-full overflow-hidden">
+                            <img src="${item.img}" alt="${item.title}" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80'">
+                            <span class="absolute top-2 left-2 bg-black/80 text-[#d4af37] text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded border border-[#d4af37]/20">${item.category}</span>
+                            <span class="absolute top-2 right-2 bg-[#d4af37] text-black text-[9px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded shadow">${item.year}</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-base text-white group-hover:text-[#d4af37] transition duration-300 uppercase truncate">${item.title}</h4>
+                            <p class="text-xs text-gray-400 mt-1 line-clamp-2 h-8 leading-relaxed">${item.desc || 'Premium pre-inspected stock selection parameter standard metrics.'}</p>
+                            <div class="mt-3 pt-2 border-t border-gray-800/60 flex justify-between items-center">
+                                <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">Price Listed</span>
+                                <span class="text-lg font-black text-[#d4af37]">₹${Number(item.price).toLocaleString('en-IN')}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 space-y-1.5">
+                        <button onclick="triggerQuickEmiComputation(${item.price}, '${item.title}')" class="w-full bg-slate-800 hover:bg-slate-700 text-[#d4af37] font-bold py-1.5 rounded text-[11px] uppercase tracking-wider transition border border-[#d4af37]/20 flex items-center justify-center">
+                            <i class="fa-solid fa-calculator mr-1.5 text-xs"></i> Check Monthly EMI
+                        </button>
+                        <a href="https://wa.me/918158931668?text=Hi%20VV%20Auto%20Sales,%20I%20am%20inquiring%20about%20the%20${encodeURIComponent(item.title)}%20(${item.year}%20Model)." target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-center py-1.5 rounded text-[11px] uppercase tracking-wider transition flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp mr-1.5 text-xs"></i> WhatsApp Request
+                        </a>
+                        <button onclick="routeFormInquiry('${item.title}')" class="w-full bg-transparent hover:bg-white/5 text-gray-400 font-medium py-1 rounded text-[10px] uppercase transition">
+                            Direct Form Inquiry
+                        </button>
+                        ${isAdminLoggedIn ? `
+                        <div class="grid grid-cols-2 gap-2 pt-2 mt-1 border-t border-gray-800">
+                            <button onclick="openVehicleModal(${item.id})" class="bg-blue-950 text-blue-400 border border-blue-800/30 py-1 rounded text-[10px] font-bold uppercase transition">Edit</button>
+                            <button onclick="deleteVehicleItem(${item.id})" class="bg-red-950 text-red-400 border border-red-800/30 py-1 rounded text-[10px] font-bold uppercase transition">Delete</button>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function triggerQuickEmiComputation(price, title) {
+            document.getElementById('calcAmount').value = price;
+            document.getElementById('calcDownPayment').value = Math.round(price * 0.20);
+            calculateEmiMatrix();
+            document.getElementById('calculator-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function filterCatalog(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn bg-[#161920] hover:bg-gray-800 text-gray-300 font-bold px-5 py-2 rounded text-xs uppercase tracking-wider transition border border-gray-800";
+            });
+            event.target.className = "filter-btn bg-[#d4af37] text-black font-bold px-5 py-2 rounded text-xs uppercase tracking-wider transition shadow-md";
+            renderCatalog();
+        }
+
+        function routeFormInquiry(title) {
+            document.getElementById('formVehicleField').value = title;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            alert("Sourcing parameter configurations parsed successfully. VV AUTO SALES will coordinate with you via voice confirmation telemetry loops shortly.");
+            e.target.reset();
+        }
+
+        function openVehicleModal(targetId = null) {
+            purgeLoadedMediaState();
+            document.getElementById('vehicleModal').classList.remove('hidden');
+            if (targetId) {
+                document.getElementById('modalTitle').innerText = "Modify Inventory Data Metric";
+                const targetMatch = vehicles.find(v => v.id === targetId);
+                document.getElementById('vehicleId').value = targetMatch.id;
+                document.getElementById('vTitle').value = targetMatch.title;
+                document.getElementById('vCategory').value = targetMatch.category;
+                document.getElementById('vPrice').value = targetMatch.price;
+                document.getElementById('vYear').value = targetMatch.year;
+                document.getElementById('vDesc').value = targetMatch.desc;
+                document.getElementById('vImageFallbackString').value = targetMatch.img;
+                document.getElementById('mediaPreviewTarget').src = targetMatch.img;
+                document.getElementById('mediaPreviewWrapper').classList.remove('hidden');
+            } else {
+                document.getElementById('modalTitle').innerText = "Introduce New Stock Variant";
+                document.getElementById('vehicleId').value = '';
+                document.getElementById('vTitle').value = '';
+                document.getElementById('vPrice').value = '';
+                document.getElementById('vYear').value = '';
+                document.getElementById('vDesc').value = '';
+            }
+        }
+
+        function closeVehicleModal() {
+            document.getElementById('vehicleModal').classList.add('hidden');
+        }
+
+        function saveVehicleForm(e) {
+            e.preventDefault();
+            const idVal = document.getElementById('vehicleId').value;
+            let imgData = document.getElementById('vImageFallbackString').value;
+            if(!imgData) imgData = "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80";
+
+            const payload = {
+                id: idVal ? Number(idVal) : Date.now(),
+                title: document.getElementById('vTitle').value,
+                category: document.getElementById('vCategory').value,
+                price: document.getElementById('vPrice').value,
+                year: document.getElementById('vYear').value,
+                img: imgData,
+                desc: document.getElementById('vDesc').value
+            };
+
+            if (idVal) {
+                vehicles = vehicles.map(v => v.id === Number(idVal) ? payload : v);
+            } else {
+                vehicles.push(payload);
+            }
+
+            localStorage.setItem('vv_showroom_v3_store', JSON.stringify(vehicles));
+            closeVehicleModal();
+            renderCatalog();
+        }
+
+        function deleteVehicleItem(targetId) {
+            if(confirm("Confirm removal of this inventory element from local browser tracking registries?")) {
+                vehicles = vehicles.filter(v => v.id !== targetId);
+                localStorage.setItem('vv_showroom_v3_store', JSON.stringify(vehicles));
+                renderCatalog();
+            }
+        }
+    </script>
+</body>
+</html>
+<script>
+    /**
+     * ==========================================
+     * 1. ADMIN MODAL & STATE MANAGEMENT LOGIC
+     * ==========================================
+     */
+    const adminModal = document.getElementById('adminModal');
+    const adminNavBtn = document.getElementById('adminNavBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    // Toggle Admin Modal Visibility
+    function toggleAdminModal(show) {
+        if (!adminModal) return;
+        if (show) {
+            adminModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevents background scrolling
+        } else {
+            adminModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restores scrolling
+        }
+    }
+
+    // Form submission inside the admin modal
+    document.querySelector('#adminModal form')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Grab inputs (Assigned index tags assuming your form structure layout)
+        const inputs = this.querySelectorAll('input');
+        const username = inputs[0]?.value.trim();
+        const password = inputs[1]?.value.trim();
+
+        // Hardcoded verification logic (Replace with API call in production)
+        if (username === "admin" && password === "vvautosales@2026") {
+            // Update auth state in localStorage
+            localStorage.setItem('vv_admin_authenticated', 'true');
+            alert('Access Granted! Welcome to Dealer Portal.');
+            toggleAdminModal(false);
+            checkAuthState();
+            this.reset();
+        } else {
+            alert('Invalid Authorization Credentials. Please check username or password.');
+        }
+    });
+
+    // Handle User Logout State
+    function handleLogout() {
+        if(confirm("Are you sure you want to log out of the Dealer Portal?")) {
+            localStorage.removeItem('vv_admin_authenticated');
+            checkAuthState();
+            alert('Logged out successfully.');
+        }
+    }
+
+    // Dynamic UI check based on active authentication
+    function checkAuthState() {
+        const isAuthenticated = localStorage.getItem('vv_admin_authenticated') === 'true';
+        if (isAuthenticated) {
+            adminNavBtn?.classList.add('hidden');
+            logoutBtn?.classList.remove('hidden');
+        } else {
+            adminNavBtn?.classList.remove('hidden');
+            logoutBtn?.classList.add('hidden');
+        }
+    }
+
+
+    /**
+     * ==========================================
+     * 2. INTERACTIVE EMI CALCULATOR LOGIC
+     * ==========================================
+     */
+    const calcSection = document.getElementById('calculator-section');
+    
+    if (calcSection) {
+        // Query inputs inside the specific section
+        const priceInput = calcSection.querySelectorAll('input')[0];
+        const downPaymentInput = calcSection.querySelectorAll('input')[1];
+        const interestInput = calcSection.querySelectorAll('input')[2];
+        const tenureSelect = calcSection.querySelector('select');
+
+        // Query output target elements inside the display card
+        const emiDisplay = calcSection.querySelector('h3');
+        const summaryData = calcSection.querySelectorAll('span.text-white');
+
+        function calculateEMI() {
+            // Read values and parse parameters safely
+            const vehiclePrice = parseFloat(priceInput.value) || 0;
+            const downPayment = parseFloat(downPaymentInput.value) || 0;
+            const annualRate = parseFloat(interestInput.value) || 0;
+            const tenureMonths = parseInt(tenureSelect.value) || 12;
+
+            // Calculate principal loan amount
+            const principal = vehiclePrice - downPayment;
+
+            // Prevent mathematical bugs if variables break down payments boundaries
+            if (principal <= 0) {
+                emiDisplay.innerHTML = `₹0<span class="text-xs text-gray-400 font-normal">/mo</span>`;
+                summaryData[0].textContent = "₹0";
+                summaryData[1].textContent = "₹0";
+                summaryData[2].textContent = "₹0";
+                return;
+            }
+
+            // Monthly interest rate allocation matrix formulas
+            const monthlyRate = (annualRate / 12) / 100;
+
+            let emi = 0;
+            if (monthlyRate === 0) {
+                // Flat rate fallbacks if interest parameter is 0% flat
+                emi = principal / tenureMonths;
+            } else {
+                // Standard Equated Monthly Installment compounding amortization formula
+                emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) / 
+                      (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+            }
+
+            const totalPayable = emi * tenureMonths;
+            const totalInterest = totalPayable - principal;
+
+            // Currency formatting helper function (Indian Standard Currency Notation Matrix)
+            const formatCurrency = (num) => {
+                return '₹' + Math.round(num).toLocaleString('en-IN');
+            };
+
+            // Update DOM element structural values
+            emiDisplay.innerHTML = `${formatCurrency(emi)}<span class="text-xs text-gray-400 font-normal">/mo</span>`;
+            summaryData[0].textContent = formatCurrency(principal);
+            summaryData[1].textContent = formatCurrency(totalInterest);
+            summaryData[2].textContent = formatCurrency(totalPayable);
+        }
+
+        // Attach event listeners for real-time recalculation feedback loop
+        [priceInput, downPaymentInput, interestInput].forEach(input => {
+            input.addEventListener('input', calculateEMI);
+        });
+        tenureSelect.addEventListener('change', calculateEMI);
+
+        // Run initial configuration render pass cycle on document load
+        calculateEMI();
+    }
+
+
+    /**
+     * ==========================================
+     * 3. INITIALIZATION ORCHESTRATION PIPELINE
+     * ==========================================
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+        checkAuthState();
+    });
+</script>
+<!-- START Admin Login Modal Component -->
+<div id="adminModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[#161920] w-full max-w-sm rounded-xl border border-[#d4af37]/30 shadow-2xl p-6 relative">
+        <button onclick="toggleAdminModal(false)" class="absolute top-4 right-4 text-gray-500 hover:text-white transition text-lg">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="text-center mb-6">
+            <div class="inline-block border border-[#d4af37] px-3 py-2 rounded bg-black mb-3">
+                <i class="fa-solid fa-lock text-[#d4af37] text-xl"></i>
+            </div>
+            <h3 class="text-lg font-black tracking-wider text-white uppercase">Dealer Portal</h3>
+            <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Management Login Only</p>
+        </div>
+        <form class="space-y-4">
+            <div>
+                <label class="block text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Access Username</label>
+                <input type="text" class="w-full bg-black border border-gray-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-[#d4af37]">
+            </div>
+            <div>
+                <label class="block text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Secure Password</label>
+                <input type="password" class="w-full bg-black border border-gray-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-[#d4af37]">
+            </div>
+            <button type="submit" class="w-full bg-[#d4af37] hover:bg-[#bfa032] text-black font-bold uppercase tracking-wider text-xs py-3 rounded mt-2 transition duration-300">Authorize Dashboard</button>
+        </form>
+    </div>
+</div>
+<!-- END Admin Login Modal Component -->
